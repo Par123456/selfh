@@ -1968,10 +1968,25 @@ __{req["description"]}__
 #______________________________End________________________________
 #______________________________app run________________________________
 
-scheduler = AsyncIOScheduler()
-scheduler.add_job(job, "interval", seconds=5)
-scheduler.add_job(antidelmember, "interval", seconds=5)
-scheduler.add_job(mak, "interval", hours=2)
-scheduler.start()
-app.start(), print("started..."), app.send_message("me" , "Hello bro i'm Updated/Run :)\nMore details: @sourcemate\n\n.      **@sourcemate**"),idle(), app.stop()
+app.start(), print("started..."), app.send_message("me" , "Hello bro i'm Updated/Run :)\nMore details: @AnishtaYin\n\n.      **@AnishtaYiN**"),idle(), app.stop()
 #______________________________End________________________________
+import asyncio
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from pyrogram import idle
+
+async def main():
+    await app.start()
+
+    scheduler = AsyncIOScheduler()
+    scheduler.add_job(job, "interval", seconds=60)
+    scheduler.start()
+
+    print("✅ Bot is running...")
+    await idle()
+
+    await app.stop()
+    print("🛑 Bot stopped.")
+
+if __name__ == '__main__':
+    asyncio.run(main())
+  
